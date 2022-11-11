@@ -1,0 +1,44 @@
+<router-outlet></router-outlet>
+<h1 *ngIf="">This is Heading</h1>
+<ul *ngIf="hide">
+  <li>hi</li>
+  <li>hellow</li>
+  <li>how r u</li>
+</ul>
+<h4 *ngFor="let item of data">
+  {{ item.name }}
+  {{ item.age }}
+  {{ item.email }}
+</h4>
+<table border="2">
+  <tr>
+    <td>name</td>
+    <td>age</td>
+    <td>email</td>
+  </tr>
+</table>
+<H1>SWITCH CASE IN ANGULAR</H1>
+<div [ngSwitch]="color">
+  <h2 *ngSwitch="'red'" style="color: red">red color</h2>
+  <h2 *ngSwitch="'green'" style="color: green">red color</h2>
+  <h2 *ngSwitch="'blue'" style="color: blue">red color</h2>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>{{ item.name }}</td>
+      <td>{{ item.age }}</td>
+      <td>{{ item.email }}</td>
+    </tr>
+  </tbody>
+</table>
+
