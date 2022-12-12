@@ -1,7 +1,9 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { DataService } from './data.service';
+import { FormGroup,FormControl } from '@angular/forms';
+import { DataService } from 'src/app/data.service';
+
 
 export class Data {
   userId: any;
@@ -11,11 +13,14 @@ export class Data {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-post',
+  templateUrl: './post.component.html',
+  styleUrls: ['./post.component.scss']
 })
-export class AppComponent implements OnInit{
+export class PostComponent implements OnInit {
+
+  constructor(private _http:HttpClient,private userData: DataService) { }
+
   title = 'Post API Call in Angular';
 
   public form = new FormGroup({
@@ -41,29 +46,13 @@ export class AppComponent implements OnInit{
     this.userData.sendData(data).subscribe((data) => {
       console.log(data);
     });
-  }
-
-  getUserFormData(data: any) {
-    console.warn(data);
-  }
-
-  msg: any;
-  fromParent = 'this parent messege';
-  ReceiveData(event: any) {
-    this.msg = event;
-  }
-
-  constructor(private http: HttpClient, private userData: DataService) {}
-  data: any;
-  users: any;
-
-  async getdata() {
-    await this.http.get('https://dummyjson.com/users').subscribe((res) => {
-      debugger;
-      this.data = res;
-      this.users = this.data.users;
+    this._http.post('https://reqres.in/api/posts', data).subscribe((resp) => {
+      debugger
+      console.log(resp);
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
 }

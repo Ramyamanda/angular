@@ -1,0 +1,9 @@
+<p>parent component</p>
+<!-- <app-child [fromparent]="name" [fromParent]="age" [address]="address"></app-child> -->
+
+<app-child (mydecorator)="msg=$event" (mydata)="msg1=$event"></app-child>
+<h1>{{msg}}</h1>
+<h1>{{msg1}}</h1>
+
+
+

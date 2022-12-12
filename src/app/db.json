@@ -1,0 +1,26 @@
+{
+    "mobiles":[
+    {
+      "user":"xyz",
+      "mobile": "xyz",
+      "price": 20000,
+      "Storage": 126,
+      "RAM":"8GB"
+    },
+    {
+      "user":"abc",
+      "mobile": "xyz",
+      "price": 18000,
+      "Storage": 64,
+      "RAM":"6GB"
+    },
+    {
+      "user":"yy",
+      "mobile": "xyz",
+      "price": 12000,
+      "Storage": 126,
+      "RAM":"4GB"
+
+    }
+  ]
+}

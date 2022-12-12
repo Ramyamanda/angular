@@ -1,0 +1,40 @@
+<div *ngIf="mobiles" class="conainer mobile-table">
+    <div class="headers">
+        <h2 class="table-title">Manage Mobiles</h2>
+        <button class="btn add">Add Mobiles</button>
+
+    </div>
+    <table class="table">
+        <thead class="text-center">
+            <tr>
+                <th>User</th>
+                <th>Mobiles</th>
+                <th>Price(Rs)</th>
+                <th>RAM</th>
+                <th>Storage</th>
+                <th>#</th>
+                <th>#</th>
+                
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor=" let mobile of mobiles">
+                <td>{{mobile.user}}</td>
+                <td>{{mobile.mobile}}</td>
+                <td>{{mobile.price}}</td>
+                
+                <td>{{mobile.RAM}}</td>
+                <td>{{mobile.Storage}}</td>
+               <td> <button class="btn btn-primary">Edit</button></td>
+               <td> <button class="btn btn-danger">Delete</button></td>
+               
+                
+               
+
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary me-5" (click)="post()">post</button>
+    <button class="btn btn-primary" (click)="get()">get</button>
+
+</div>

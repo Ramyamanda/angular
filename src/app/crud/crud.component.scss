@@ -1,0 +1,24 @@
+.mobile-table{
+
+    width: 800px;
+    padding: 20px 25px;
+    background-color: white;
+    margin: 30px 0;
+    border-radius: 3px;
+}
+.headers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgb(99, 99, 216);
+    color: white;
+
+}
+.add{
+    background-color: rgb(14, 122, 86);
+    color: white;
+}
+.body{
+    text-align: center;
+}

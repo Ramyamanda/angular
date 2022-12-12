@@ -14,7 +14,7 @@
       routerLink="./Myprofile"
       routerLinkActive="active"
     >
-      My profile
+      Profile
     </button>
     <button
       class="btn btn-info m-2"
@@ -22,15 +22,15 @@
       routerLink="/Myattendance"
       routerLinkActive="active"
     >
-      My Attendance
+     Model
     </button>
     <button
       class="btn btn-warning m-2"
       type="button"
-      routerLink="/Myleaves"
+      routerLink="/Grid"
       routerLinkActive="active"
     >
-      My Leaves
+     Grid System
     </button>
     <button
       class="btn btn-warning m-2"
@@ -46,7 +46,7 @@
       routerLink="/CheckoutForm"
       routerLinkActive="active"
     >
-    CheckoutForm
+      CheckoutForm
     </button>
     <button
       class="btn btn-warning m-2"
@@ -54,7 +54,7 @@
       routerLink="/Directives"
       routerLinkActive="active"
     >
-    Directives
+      Directives
     </button>
     <button
       class="btn btn-warning m-2"
@@ -62,7 +62,7 @@
       routerLink="/reactiveform"
       routerLinkActive="active"
     >
-    reactive-form
+      reactive-form
     </button>
     <button
       class="btn btn-warning m-2"
@@ -70,23 +70,109 @@
       routerLink="/Pipes"
       routerLinkActive="active"
     >
-    Pipes
+      Pipes
     </button>
-    
+    <button
+      class="btn btn-warning m-2"
+      type="button"
+      routerLink="/API"
+      routerLinkActive="active"
+    >
+     GetAPI
+    </button>
+    <button
+      class="btn btn-warning m-2"
+      type="button"
+      routerLink="/Post"
+      routerLinkActive="active"
+    >
+     PostAPI
+    </button>
+    <button
+      class="btn btn-warning m-2"
+      type="button"
+      routerLink="/Task"
+      routerLinkActive="active"
+    >
+     Task
+    </button>
+    <button
+      class="btn btn-warning m-2"
+      type="button"
+      routerLink="/javascript"
+      routerLinkActive="active"
+    >
+     Javascript
+    </button>
+    <button
+      class="btn btn-warning m-2"
+      type="button"
+      routerLink="/Crud"
+      routerLinkActive="active"
+    >
+     Crud
+    </button>
+    <button
+      class="btn btn-warning m-2"
+      type="button"
+      routerLink="/Login"
+      routerLinkActive="active"
+    >
+     login page
+    </button>
+    <button
+      class="btn btn-warning m-2"
+      type="button"
+      routerLink="/signUp"
+      routerLinkActive="active"
+    >
+     signUp
+    </button>
   </form>
 </nav>
 
-<div class="border border-3 border-dark">
+<div class="border border-3 border-dark"></div>
 
-</div>
+<!-- <app-parent></app-parent> -->
 
 
-
-<div class="my-background">
+<div class="row">
   <router-outlet></router-outlet>
 </div>
 
 <!-- <app-test [parentMsg]="fromParent"></app-test> -->
+
+<!-- <button (click)="getdata()">get</button>
+
+<div *ngIf="data">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>age</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let users of users">
+        <td>{{ users.id }}</td>
+        <td>{{ users.firstName }}</td>
+        <td>{{ users.lastName }}</td>
+        <td>{{ users.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+
+
+
+
+
+
+
 
 
 

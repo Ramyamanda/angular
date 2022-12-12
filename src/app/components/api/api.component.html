@@ -1,0 +1,34 @@
+<router-outlet></router-outlet>
+
+<div class="container">
+  <h1>Users</h1>
+  <div *ngIf="listusers">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>AVATAR</th>
+          <th>ID</th>
+          <th>EMAIL</th>
+          <th>FIRSTNAME</th>
+          <th>LASTNAME</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          *ngFor="let listusers of listusers?.data | paginate: config"
+          id="data"
+        >
+          <td>{{ listusers.avatar }}</td>
+          <td>{{ listusers.id }}</td>
+          <td>{{ listusers.email }}</td>
+          <td>{{ listusers.first_name }}</td>
+          <td>{{ listusers.last_name }}</td>
+        </tr>
+      </tbody>
+      <pagination-controls
+        (pageChange)="pageChanged($event)"
+      ></pagination-controls>
+    </table>
+  </div>
+</div>
