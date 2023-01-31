@@ -30,8 +30,18 @@ import { TestComponent } from './components/test/test.component';
 import { ChildComponent } from './components/child/child.component';
 import { JavascriptComponent } from './components/javascript/javascript.component';
 import { CrudComponent } from './crud/crud.component';
-import { StepperComponent } from './stepper/stepper.component';
+import { StepperComponent } from './components/stepper/stepper.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { CrossFieldValidationsComponent } from './cross-field-validations/cross-field-validations.component';
+import { FormValidationsComponent } from './components/form-validations/form-validations.component';
+import { ReactiveFormValidationsComponent } from './reactive-form-validations/reactive-form-validations.component';
+import { RoutingComponent } from './routing/routing.component';
+import { UsersComponent } from './users/users.component';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { Page404Component } from './page404/page404.component';
+import { QueryparamsComponent } from './queryparams/queryparams.component';
+import { PeopleComponent } from './people/people.component';
+import { RoutGuardsService } from './rout-guards.service';
 
 
 
@@ -62,6 +72,16 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     CrudComponent,
     StepperComponent,
     SignUpComponent,
+    CrossFieldValidationsComponent,
+    FormValidationsComponent,
+    ReactiveFormValidationsComponent,
+    RoutingComponent,
+    UsersComponent,
+    UserInfoComponent,
+    Page404Component,
+    QueryparamsComponent,
+    PeopleComponent,
+   
     
   ],
   imports: [
@@ -81,7 +101,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     ),
     
   ],
-  providers: [DataService],
+  providers: [DataService,RoutGuardsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

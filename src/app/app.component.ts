@@ -16,6 +16,8 @@ export class Data {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit{
+
+
   title = 'Post API Call in Angular';
 
   public form = new FormGroup({

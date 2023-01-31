@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { APIComponent } from './components/api/api.component';
@@ -6,6 +6,7 @@ import { CheckoutFormComponent } from './components/checkout-form/checkout-form.
 import { CourceComponent } from './components/cource/cource.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DirectivesComponent } from './components/directives/directives.component';
+import { FormValidationsComponent } from './components/form-validations/form-validations.component';
 import { HomeComponent } from './components/home/home.component';
 import { JavascriptComponent } from './components/javascript/javascript.component';
 import { MycontactComponent } from './components/mycontact/mycontact.component';
@@ -15,15 +16,29 @@ import { PostComponent } from './components/post/post.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 import { TaskComponent } from './components/task/task.component';
+import { CrossFieldValidationsComponent } from './cross-field-validations/cross-field-validations.component';
 import { CrudComponent } from './crud/crud.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { Page404Component } from './page404/page404.component';
+import { PeopleComponent } from './people/people.component';
+import { QueryparamsComponent } from './queryparams/queryparams.component';
+import { ReactiveFormValidationsComponent } from './reactive-form-validations/reactive-form-validations.component';
+import { RoutGuardsService } from './rout-guards.service';
+import { RoutingComponent } from './routing/routing.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'Dashboard',
+    pathMatch: 'full',
+  },
+  {
     path: 'Dashboard',
-    component: DashboardComponent,children: [{path:'course',
-  component:CourceComponent}]
+    component: DashboardComponent,
+    children: [{ path: 'course', component: CourceComponent }],
   },
   {
     path: 'Myattendance',
@@ -35,65 +50,102 @@ const routes: Routes = [
   },
   {
     path: 'Grid',
-    component: ProfileComponent
+    component: ProfileComponent,
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'CheckoutForm',
-    component:CheckoutFormComponent
+    component: CheckoutFormComponent,
   },
   {
     path: 'Directives',
-    component:DirectivesComponent
+    component: DirectivesComponent,
   },
   {
     path: 'reactiveform',
-    component:ReactiveFormsComponent
+    component: ReactiveFormsComponent,
   },
   {
     path: 'Pipes',
-    component:PipesComponent
+    component: PipesComponent,
   },
   {
     path: 'API',
-    component:APIComponent
+    component: APIComponent,
   },
   {
     path: 'Post',
-    component:PostComponent
+    component: PostComponent,
   },
   {
     path: 'Task',
-    component:TaskComponent
+    component: TaskComponent,
   },
   {
     path: 'javascript',
-    component:JavascriptComponent
+    component: JavascriptComponent,
   },
   {
     path: 'Crud',
-    component:CrudComponent
+    component: CrudComponent,
   },
   {
     path: 'Login',
-    component:LoginPageComponent
+    component: LoginPageComponent,
   },
   {
     path: 'signUp',
-    component:SignUpComponent
-  }
-  
-];
+    component: SignUpComponent,
+  },
+  {
+    path: 'Validations',
+    component: CrossFieldValidationsComponent,
+  },
+  {
+    path: 'formvalidations',
+    component: FormValidationsComponent,
+  },
+  {
+    path: 'reactive',
+    component: ReactiveFormValidationsComponent,
+  },
+  {
+    path:'routing',
+    component:RoutingComponent
 
+  },
+  {
+    path: 'routing/:id',
+    component: RoutingComponent,
+  },
+  {
+    path: 'users',
+    component: UsersComponent,
+  },
+  {
+    path: 'userInfo',
+    component: UserInfoComponent,
+  },
+  {
+     path:'people',
+     component:PeopleComponent
+  },
+  {
+    path:'queryparams',
+    component:QueryparamsComponent,canActivate:[RoutGuardsService]
+  },
+
+  {
+    path: '**',
+    component: Page404Component,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-
-
-

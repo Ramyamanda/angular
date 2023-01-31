@@ -1,0 +1,65 @@
+
+
+<div class="px-3">
+    <form class="col-6" #userForm="ngForm">
+        <div class="form-group mt-3">
+            <label>First Name:</label>
+            <input type="text" id="firstname" #firstname="ngModel" name="firstname" class="form-control" required ngModel>
+            <span *ngIf="firstname.invalid && firstname.touched" style="color:red">please enter a valid input</span>
+        </div>
+        <div class="form-group mt-3">
+            <label>Last Name:</label>
+            <input type="text" id="lastname"  #lastname="ngModel" name="lastname" class="form-control" required ngModel>
+            <span *ngIf="lastname.invalid && lastname.touched" style="color:red">please enter a valid input</span>
+        </div>
+        <div class="form-group mt-3">
+            <label>Email:</label>
+         <input type="text" id="email" #email="ngModel" name="email" class="form-control" required ngModel>
+         <span *ngIf="email.invalid && email.touched" style="color:red">please enter a valid input</span>
+        </div>
+        <div class="form-group mt-3" #gender="ngModel" required ngModel>
+            <span *ngIf="gender.invalid && gender.touched" style="color:red">please select the field</span>
+            <label> Gender</label>
+            <br>
+            <input type="radio" value="male" id="gender" name="gender">Male
+            <input type="radio" value="female" id="gender" name="gender">Female
+        </div>
+        <div class="form-group mt-3">
+            <label>Country</label>
+            <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example" name="country" id="country" ngModel >
+               <option *ngFor="let country of countryList" [value]="country">{{country}}</option>
+            </select>
+        </div>
+        <div class="mt-3">
+        <label>Address</label>
+        <div class="px-5" ngModelGroup="address">
+            <div class="form-group mt-2">
+                <label>City</label>
+                <input type="text" id="city" #city="ngModel" name="city" class="form-control"required ngModel>
+                <span *ngIf="city.invalid && city.touched" style="color:red">please enter a valid input</span>
+            </div>
+            <div class="form-group mt-2">
+                <label>Street</label>
+                <input type="text" id="street" #street="ngModel" name="street" class="form-control" required ngModel>
+                <span *ngIf="street.invalid && street.touched" style="color:red">please enter a valid input</span>
+            </div>
+            <div class="form-group mt-2">
+                <label>PinCode</label>
+                <input type="text" id="pincode" #pincode="ngModel" name="pincode" class="form-control" required ngModel>
+                <span *ngIf="pincode.invalid && pincode.touched" style="color:red">please enter a valid input</span>
+            </div>
+        </div>
+    </div>
+        <div class="form-group mt-3">
+           <input type="checkbox" value="" id="items" #checkbox="ngModel" name="items" required ngModel>
+          <label>All information provided by me is correct.</label>
+          <p *ngIf="checkbox.invalid && checkbox.touched" style="color:red">please activate</p>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 mx-4" (click)=submit(userForm)>Submit</button>
+        <button type="button" class="btn btn-primary mt-3" (click)=reset(userForm) >reset</button>
+    </form>
+    <P>{{userForm.value | json}}</P>
+    <p>valid:{{userForm.valid}}</p>
+    <p>touched:{{userForm.touched}}</p>
+</div>
+
