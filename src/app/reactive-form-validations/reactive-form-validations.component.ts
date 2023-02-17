@@ -10,7 +10,7 @@ import Validation from 'src/utils/validations';
 export class ReactiveFormValidationsComponent implements OnInit {
 
   loginForm=new FormGroup({
-    firstname:new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+$')]),
+    firstname:new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+$')],),
     middlename:new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+$')]),
     lastname:new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+$')]),
     password:new FormControl('',[Validators.required,Validators.minLength(8),Validators.pattern('/^[a-zA-Z0-9!@#$%^&*]{6,16}$/')]),

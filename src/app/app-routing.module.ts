@@ -19,15 +19,16 @@ import { TaskComponent } from './components/task/task.component';
 import { CrossFieldValidationsComponent } from './cross-field-validations/cross-field-validations.component';
 import { CrudComponent } from './crud/crud.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { Page404Component } from './page404/page404.component';
-import { PeopleComponent } from './people/people.component';
-import { QueryparamsComponent } from './queryparams/queryparams.component';
+import { Page404Component } from './components/page404/page404.component';
+import { PeopleComponent } from './components/people/people.component';
+import { QueryparamsComponent } from './components/queryparams/queryparams.component';
 import { ReactiveFormValidationsComponent } from './reactive-form-validations/reactive-form-validations.component';
-import { RoutGuardsService } from './rout-guards.service';
-import { RoutingComponent } from './routing/routing.component';
+import { RoutGuardsService } from './components/rout-guards.service';
+import { RoutingComponent } from './components/routing/routing.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { UserInfoComponent } from './user-info/user-info.component';
-import { UsersComponent } from './users/users.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UsersComponent } from './components/users/users.component';
+import { SenderComponent } from './sender/sender.component';
 
 const routes: Routes = [
   {
@@ -136,6 +137,10 @@ const routes: Routes = [
   {
     path:'queryparams',
     component:QueryparamsComponent,canActivate:[RoutGuardsService]
+  },
+  {
+    path:'sender',
+    component:SenderComponent
   },
 
   {

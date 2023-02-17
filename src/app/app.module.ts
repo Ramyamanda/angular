@@ -35,13 +35,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { CrossFieldValidationsComponent } from './cross-field-validations/cross-field-validations.component';
 import { FormValidationsComponent } from './components/form-validations/form-validations.component';
 import { ReactiveFormValidationsComponent } from './reactive-form-validations/reactive-form-validations.component';
-import { RoutingComponent } from './routing/routing.component';
-import { UsersComponent } from './users/users.component';
-import { UserInfoComponent } from './user-info/user-info.component';
-import { Page404Component } from './page404/page404.component';
-import { QueryparamsComponent } from './queryparams/queryparams.component';
-import { PeopleComponent } from './people/people.component';
-import { RoutGuardsService } from './rout-guards.service';
+import { RoutingComponent } from './components/routing/routing.component';
+import { UsersComponent } from './components/users/users.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { Page404Component } from './components/page404/page404.component';
+import { QueryparamsComponent } from './components/queryparams/queryparams.component';
+import { PeopleComponent } from './components/people/people.component';
+import { RoutGuardsService } from './components/rout-guards.service';
+import { SenderComponent } from './sender/sender.component';
+import { ReceiverComponent } from './receiver/receiver.component';
 
 
 
@@ -81,6 +83,8 @@ import { RoutGuardsService } from './rout-guards.service';
     Page404Component,
     QueryparamsComponent,
     PeopleComponent,
+    SenderComponent,
+    ReceiverComponent,
    
     
   ],
